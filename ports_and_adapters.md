@@ -1,0 +1,20 @@
+```
+/app
+    /Http
+        /Controllers
+            ExemploController.php
+    /Models
+        Exemplo.php
+    /Services
+        ExemploService.php
+        /Contracts
+            iExemploService.php
+    /Repositories
+        ExemploRepository.php
+        /Contracts
+            iExemploRepository.php
+    /Adapters
+        ExemploAdapter.php
+        /Contracts
+            iExemploAdapter.php
+```
