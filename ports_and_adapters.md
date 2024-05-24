@@ -8,13 +8,11 @@
     /Services
         ExemploService.php
         /Contracts
-            iExemploService.php
+                iExemploService.php
     /Repositories
         ExemploRepository.php
         /Contracts
             iExemploRepository.php
-    /Adapters
-        ExemploAdapter.php
-        /Contracts
-            iExemploAdapter.php
+/tests
+    ExemploTest.php
 ```
