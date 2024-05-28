@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Services\Contracts\iAuthService;
@@ -11,14 +12,17 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    public function __construct(private iAuthService $authService) {}
+    public function __construct(
+        private iAuthService $authService
+    ) {}
 
     /**
      * Register a User.
      */
-    public function register(Request $request): JsonResponse {
+    public function register(StoreUserRequest $request): JsonResponse {
         try {
-            $user = $this->authService->register($request);
+
+            $user = $this->authService->register($request->validated());
             return response()->json($user, 201);
         }
 

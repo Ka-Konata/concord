@@ -3,8 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Middleware\ApiValidationExceptionHandler;
 
-Route::middleware(['api'])->group(function () {
+Route::get('/');
+
+Route::middleware(['api', ApiValidationExceptionHandler::class])->group(function () {
     Route::prefix('auth')->group(function () {
         Route::post('/register', [AuthController::class, 'register'])->name('register');
         Route::post('/login', [AuthController::class, 'login'])->name('login');

@@ -2,6 +2,7 @@
 
 namespace App\Services\Contracts;
 
+use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
